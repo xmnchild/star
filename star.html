@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <title>star</title>
   <style>
-
     #canvas1 {
-   width: 100%;
+      width: 100%;
 
     }
 
@@ -38,6 +38,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <div>
@@ -57,36 +58,37 @@
     canvas.width = window.innerWidth;
 
     function drawShape() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  var radius =  document.getElementById("monInput").value;
-  var inset = 0.5; //radius intérieur = centre de l'étoile jusqu'au coin interne
-  var n = 6; //n = nombre de branches de l'étoile
-  
-  // vérification de la variable radius et codes d'erreur
-  if(isNaN(radius) || radius === '') {
-    alert('Veuillez saisir un nombre entier');
-  } else if(radius < 0) {
-    alert('Veuillez saisir un nombre entier supérieur ou égal à 0');
-  } else {
-    ctx.beginPath();
-    ctx.save();
-    ctx.translate(canvas.width/2, canvas.height/2);
-    ctx.moveTo(0,0 - radius);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      var radius = document.getElementById("monInput").value;
+      var inset = 0.5; //radius intérieur = centre de l'étoile jusqu'au coin interne
+      var n = 6; //n = nombre de branches de l'étoile
 
-    for (let i = 0; i < n; i++){
-      ctx.rotate(Math.PI/n);
-      ctx.lineTo(0, 0 - radius*inset);
-      ctx.rotate(Math.PI/n);
-      ctx.lineTo(0,0 - radius);
+      // vérification de la variable radius et codes d'erreur
+      if (isNaN(radius) || radius === '') {
+        alert('Veuillez saisir un nombre entier');
+      } else if (radius < 0) {
+        alert('Veuillez saisir un nombre entier supérieur ou égal à 0');
+      } else {
+        ctx.beginPath();
+        ctx.save();
+        ctx.translate(canvas.width / 2, canvas.height / 2);
+        ctx.moveTo(0, 0 - radius);
+
+        for (let i = 0; i < n; i++) {
+          ctx.rotate(Math.PI / n);
+          ctx.lineTo(0, 0 - radius * inset);
+          ctx.rotate(Math.PI / n);
+          ctx.lineTo(0, 0 - radius);
+
+        }
+
+        ctx.restore();
+        ctx.closePath();
+        ctx.stroke();
+      }
 
     }
-
-    ctx.restore();
-    ctx.closePath();
-    ctx.stroke();
-  }
-
-}
-</script>
+  </script>
 </body>
+
 </html>
