@@ -1,0 +1,2 @@
+# star
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/b4cc3289ed404085b1e89d5b86fdfa9a)](https://app.codacy.com/gh/xmnchild/star?utm_source=github.com&utm_medium=referral&utm_content=xmnchild/star&utm_campaign=Badge_Grade_Settings)
